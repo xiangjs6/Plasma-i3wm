@@ -259,7 +259,7 @@ bindsym Mod1+Control+a exec flameshot gui
 
 # restart krunner & panel because of broken multimonitor handling
 exec --no-startup-id sleep 5 && kquitapp5 plasmashell && kstart5 plasmashell
-exec --no-startup-id sleep 5 && kquitapp5 krunner && kstart5 krunner
+#exec --no-startup-id sleep 5 && kquitapp5 krunner && kstart5 krunner
 
 #qq,tim需要的依赖
 #exec_always --no-startup-id /usr/lib/gsd-xsettings
