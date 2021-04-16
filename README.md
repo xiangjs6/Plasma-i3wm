@@ -5,14 +5,15 @@
 
 * i3-gaps(obviously)
 * feh to set up the background
-* dmenu (not required)
+* j4-dmenu-desktop-git (not required)
 * morc_menu (not required)
 * i3status for the status bar of i3
 * compton Enable transparency (optional)
 * wmctrl to add to the i3 config (if you're not on an English installation of Plasma)
+* rofi: quickly start app
 
 
-sudo pacman -Syu && sudo pacman -S i3-gaps feh j4-dmenu-desktop-git morc_menu i3status wmctrl compton
+sudo pacman -Syu && sudo pacman -S i3-gaps feh rofi i3status wmctrl compton
 
 
 
