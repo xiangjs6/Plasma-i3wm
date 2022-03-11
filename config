@@ -168,10 +168,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -199,27 +199,6 @@ bar {
     }
     tray_output none
 }
-#bar {
-#    status_command i3status -t 
-#status_command i3blocks
-#        status_command conky -c ~/.conkyrc
-#        mode hide
-#        height 20
-#        position top
-#        tray_output none
-#        colors {
-#            background #FFFFFF
-#        }
-#        colors {
-#            background #999999
-#            statusline #ffffff
-#            focused_workspace  #4c7899 #285577 #ffffff
-#            active_workspace   #333333 #5f676a #ffffff
-#            inactive_workspace #333333 #222222 #888888
-#            urgent_workspace   #2f343a #900000 #ffffff
-#        }
-#}
-
 
 # Plasma compatibility improvements
 
@@ -247,7 +226,6 @@ for_window [title="QQ"] floating enable; border none
 for_window [title="系统监视器"] floating enable; border none
 for_window [title="添加/删除软件"] floating enable; border none
 for_window [title="Qv2ray"] floating enable; border none
-# for_window [title="Raspberry Pi 4"] floating enable
 
 exec --no-startup-id feh --bg-fill --bg-scale ~/.background.jpg
 
@@ -255,7 +233,7 @@ exec_always --no-startup-id picom -bc
 exec --no-startup-id yakuake
 bindsym $mod+t exec ksysguard
 bindsym $mod+Shift+d exec dolphin
-bindsym Mod1+Control+a exec flameshot gui 
+bindsym Mod1+Control+a exec flameshot gui
 
 # restart krunner & panel because of broken multimonitor handling
 exec --no-startup-id sleep 5 && kquitapp5 plasmashell && kstart5 plasmashell
@@ -266,7 +244,8 @@ exec --no-startup-id sleep 5 && kquitapp5 plasmashell && kstart5 plasmashell
 
 #前后工作窗口切换
 workspace_auto_back_and_forth yes
-bindsym Mod4+Tab workspace back_and_forth
+bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+Shift+Tab exec ~/.config/i3/i3-display-swap.py
 
 bindsym Mod4+F3 exec firefox
 
