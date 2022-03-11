@@ -200,6 +200,7 @@ bar {
     tray_output none
 }
 
+
 # Plasma compatibility improvements
 
 for_window [window_role="pop-up"] floating enable
@@ -226,6 +227,7 @@ for_window [title="QQ"] floating enable; border none
 for_window [title="系统监视器"] floating enable; border none
 for_window [title="添加/删除软件"] floating enable; border none
 for_window [title="Qv2ray"] floating enable; border none
+# for_window [title="Raspberry Pi 4"] floating enable
 
 exec --no-startup-id feh --bg-fill --bg-scale ~/.background.jpg
 
@@ -245,7 +247,7 @@ exec --no-startup-id sleep 5 && kquitapp5 plasmashell && kstart5 plasmashell
 #前后工作窗口切换
 workspace_auto_back_and_forth yes
 bindsym $mod+Tab workspace back_and_forth
-bindsym $mod+Shift+Tab exec ~/.config/i3/i3-display-swap.py
+bindsym $mod+Shift+Tab exec --no-startup-id ~/.config/i3/i3-display-swap.sh
 
 bindsym Mod4+F3 exec firefox
 
