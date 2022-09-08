@@ -11,10 +11,10 @@
 * compton Enable transparency (optional)
 * wmctrl to add to the i3 config (if you're not on an English installation of Plasma)
 * rofi: quickly start app
+* zensu: run sudo command
+* kdialog: input zensu password
 
-
-sudo pacman -Syu && sudo pacman -S i3-gaps feh rofi i3status wmctrl compton
-
+sudo pacman -Syu && sudo pacman -S i3-gaps feh rofi i3status wmctrl compton zensu kdialog
 
 
 ## 2. 添加XSession
