@@ -224,6 +224,7 @@ for_window [class="(?i)*nextcloud*"] floating disable
 for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
 no_focus [class="plasmashell" window_type="notification"]
 for_window [title="Desktop — Plasma"] kill; # floating enable; border none
+for_window [title="Desktop @ QRect.*"] kill; floating enable; border none
 for_window [title="QQ"] floating enable; border none
 for_window [title="系统监视器"] floating enable; border none
 for_window [title="System Monitor"] floating enable; border none
@@ -232,6 +233,7 @@ for_window [title="Add/Remove Software"] floating enable; border none
 for_window [title="Qv2ray"] floating enable; border none
 # for_window [title="Raspberry Pi 4"] floating enable
 
+
 exec --no-startup-id feh --bg-fill --bg-scale ~/.background.jpg
 exec_always --no-startup-id conky -c ~/.config/i3/conkyrc
 
@@ -239,10 +241,11 @@ exec_always --no-startup-id picom -bc
 exec --no-startup-id yakuake
 bindsym $mod+t exec ksysguard
 #bindsym $mod+Shift+d exec dolphin
-bindsym Mod1+Control+a exec flameshot gui
+#bindsym Mod1+Control+a exec flameshot gui
+bindsym Mod1+Control+a exec spectacle -r
 
 # restart krunner & panel because of broken multimonitor handling
-exec --no-startup-id sleep 5 && kquitapp5 plasmashell && kstart5 plasmashell
+#exec --no-startup-id sleep 5 && kquitapp5 plasmashell && kstart5 plasmashell
 #exec --no-startup-id sleep 5 && kquitapp5 krunner && kstart5 krunner
 
 #qq,tim需要的依赖
@@ -268,6 +271,7 @@ for_window [title="bash — Yakuake"] floating enable
 
 # 隐藏程序边框
 new_window pixel 0
+for_window [class="^.*"] border pixel 0
 
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
